@@ -9,7 +9,10 @@
             zoomButtonHeight: 30,
             zoomWidth       : 795,
             zoomHeight      : 641,
-            debug           : false
+            debug           : false,
+
+            afterZoomOpened: function () {},
+            afterZoomClosed: function () {}
         };
 
     function Plugin(element, options) {
@@ -25,7 +28,6 @@
         this.settings  = $.extend({}, defaults, options);
         this._defaults = defaults;
         this._name     = pluginName;
-
 
         this.init();
     }
@@ -137,6 +139,7 @@
                 zoomImage.addClass('kk-zoom-image-big').css({
                     opacity: 1
                 });
+                _this.settings.afterZoomOpened.call( _this.$element );
             }, 10);
 
             zoomImage.on('click', function () {
@@ -157,6 +160,7 @@
 
             setTimeout(function () {
                 zoomImage.remove();
+                _this.settings.afterZoomClosed.call( _this.$element );
             }, 300);
         },
 

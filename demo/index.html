@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>kkScrollAnimate - Demo</title>
+    <title>kkZoom - Demo</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="../bower_components/prism/themes/prism-okaidia.css">
     <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="../src/kkZoom.css">
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
@@ -27,10 +28,10 @@
     <div class="hero-header top-header height-100 valign-wrapper">
         <div class="center valign hero-header-content">
             <h2 class="logo m-0 mb-5">
-                kkScrollAnimate
+                kkZoom
             </h2>
             <div class="slug">
-                jQuery plugin to animate website/app elements on scroll
+                jQuery plugin to zoom images
             </div>
             <div class="mt-20">
                 <button id="button-1" class="waves-effect waves-teal btn-flat primary mr-10" style="z-index: 20">
@@ -112,46 +113,6 @@
                     <td>$('body')</td>
                     <td>Selektor elementu w którym jest scroll. Najczęście jest to 'window', 'document' lub 'body'</td>
                 </tr>
-                <tr>
-                    <td>startFromElement <span class="new badge" data-badge-caption="">jQuery object</span></td>
-                    <td>false</td>
-                    <td>Selektor elementu strony, który ma się pojawić w viewport, aby animacja się rozpoczęła.</td>
-                </tr>
-                <tr>
-                    <td>scrollType <span class="new badge" data-badge-caption="">string</span></td>
-                    <td>'vertical'</td>
-                    <td>Typ scrollowania elementu lub strony: 'vertical' lub 'horizontal'</td>
-                </tr>
-                <tr>
-                    <td>startScroll <span class="new badge" data-badge-caption="">int</span></td>
-                    <td>0</td>
-                    <td>Wartość scrolla po osiągnięciu której ma się rozpocząć animacja</td>
-                </tr>
-                <tr>
-                    <td>endScroll <span class="new badge" data-badge-caption="">int</span></td>
-                    <td>0</td>
-                    <td>Wartość scrolla przy której animacja ma się zakończyć</td>
-                </tr>
-                <tr>
-                    <td>cssProperty <span class="new badge" data-badge-caption="">string</span></td>
-                    <td>''</td>
-                    <td>Właściwość CSS, która ma być manipulowana podczas animacji</td>
-                </tr>
-                <tr>
-                    <td>before <span class="new badge" data-badge-caption="">int</span></td>
-                    <td>0</td>
-                    <td>Początkowa wartość właściwości CSS</td>
-                </tr>
-                <tr>
-                    <td>after <span class="new badge" data-badge-caption="">int</span></td>
-                    <td>0</td>
-                    <td>Końcowa wartość właściwości CSS</td>
-                </tr>
-                <tr>
-                    <td>unit <span class="new badge" data-badge-caption="">string</span></td>
-                    <td>''</td>
-                    <td>Jednostka wartości, którą animujemy</td>
-                </tr>
                 </tbody>
             </table>
         </div>
@@ -181,44 +142,10 @@
 </footer>
 
 <script src="assets/js/libs.min.js"></script>
-<script src="assets/js/kkScrollAnimate.js"></script>
+<script src="assets/js/kkZoom.js"></script>
 <script>
     $(document).ready(function() {
-        $('#button-1, #button-2').kkScrollAnimate({
-            scrollContent: $(document),
-            startScroll: 5,
-            endScroll: 100,
-            cssProperty: 'margin-top',
-            before: 0,
-            after: 200,
-            unit: 'px'
-        });
-
-        // $('.hero-header-bg').kkScrollAnimate({
-        //     scrollContent: $(document),
-        //     startScroll: 5,
-        //     endScroll: 100,
-        //     cssProperty: 'transform',
-        //     before: 'scale(1.3)',
-        //     after: 'scale(1)',
-        //     unit: ''
-        // });
-
-        $('.hero-header-bg').kkScrollAnimate({
-            startScroll: 50,
-            endScroll: 500,
-            cssProperty: 'opacity',
-            before: 1,
-            after: 0
-        });
-        $('.hero-header-bg').kkScrollAnimate({
-            startScroll: 50,
-            endScroll: 500,
-            cssProperty: 'top',
-            before: 0,
-            after: 300,
-            unit: 'px'
-        });
+//        $('#button-1, #button-2').kkZoom();
     });
 </script>
 </body>
