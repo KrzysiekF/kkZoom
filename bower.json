@@ -1,0 +1,31 @@
+{
+  "name": "kkZoom",
+  "homepage": "https://github.com/KrzysiekF/kkZoom",
+  "authors": [
+    "Krzysztof Furtak <hello@krzysztof-furtak.pl>"
+  ],
+  "description": "jQuery plugin - zoom images",
+  "main": "kkZoom.js",
+  "keywords": [
+    "images",
+    "zoom",
+    "jquery",
+    "plugin"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "jquery-migrate": "^3.0.0"
+  },
+  "devDependencies": {
+    "materialize": "^0.97.7",
+    "prism": "prismjs#^1.5.1"
+  }
+}

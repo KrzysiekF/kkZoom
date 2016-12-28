@@ -1,0 +1,225 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>kkScrollAnimate - Demo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Parisienne" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="../bower_components/prism/themes/prism-okaidia.css">
+    <link rel="stylesheet" href="assets/styles/style.css">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+</head>
+<body>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div id="main">
+    <div class="hero-header top-header height-100 valign-wrapper">
+        <div class="center valign hero-header-content">
+            <h2 class="logo m-0 mb-5">
+                kkScrollAnimate
+            </h2>
+            <div class="slug">
+                jQuery plugin to animate website/app elements on scroll
+            </div>
+            <div class="mt-20">
+                <button id="button-1" class="waves-effect waves-teal btn-flat primary mr-10" style="z-index: 20">
+                    Button
+                </button>
+                <button id="button-2" class="waves-effect waves-teal btn-flat secondary" style="z-index: 20">
+                    Button 2
+                </button>
+            </div>
+        </div>
+
+        <div class="overlay"></div>
+        <div class="hero-header-bg bg-1"></div>
+    </div>
+
+    <div id="content">
+        <div class="section center">
+
+            <h3 id="about">About</h3>
+            <p><strong>kkScrollAnimate</strong> to plugin do <strong>jQuery</strong>, który pozwala na kierowanie animacją elementów strony lub aplikacji za pomocą scrolla.</p>
+
+            <div class="row">
+                <div class="col s4">
+                    <i class="medium material-icons">invert_colors</i>
+                    <h5>CSS Class</h5>
+                    <p>Możesz dodać / usunąć klasę css do dowolnego elementu na stronie / aplikacji w zależności od pozycji scrolla.</p>
+                </div>
+                <div class="col s4">
+                    <i class="medium material-icons">picture_in_picture</i>
+                    <h5>Element in viewport</h5>
+                    <p>Animacja może być także uruchomiona w momencie, gdy inny element strony pojawi się w viewport.</p>
+                </div>
+                <div class="col s4">
+                    <i class="medium material-icons">open_in_browser</i>
+                    <h5>Animation on scroll</h5>
+                    <p>Kierowanie animacją elementów strony lub aplikacji za pomocą scrolla.</p>
+                </div>
+            </div>
+
+            <p>Przykłady animacji znajdziesz poniżej</p>
+
+        </div>
+
+        <div class="section">
+            <h3>Download</h3>
+            <div class="center">
+                <a href="https://github.com/KrzysiekF/kkScrollAnimate/archive/0.1.0.zip" class="waves-effect waves-teal btn-flat btn-large primary">
+                    Download <small>v0.1.0 Alpha</small>
+                </a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Installation</h3>
+            <p>
+                1. kkScrollAnimate can be installed using <a href="https://bower.io/" target="_blank">bower</a> or you can simply
+                <a href="">download plugin source</a>.
+            </p>
+            <pre><code class="language-bash">$ bower install kkScrollAnimate --save</code></pre>
+            <p>
+                2. Include JS (ideally at the bottom of the page but also works in the <code>&lt;head></code>)
+            </p>
+            <pre><code class="language-markup">&lt;script src="PATH_TO_FILE/dist/kkScrollAnimate.min.js">&lt;/script></code></pre>
+        </div>
+
+        <div class="section">
+            <h3>Options</h3>
+            <table class="responsive-table">
+                <thead>
+                <tr>
+                    <th>property</th>
+                    <th>default</th>
+                    <th>description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>scrollContent <span class="new badge" data-badge-caption="">jQuery object</span></td>
+                    <td>$('body')</td>
+                    <td>Selektor elementu w którym jest scroll. Najczęście jest to 'window', 'document' lub 'body'</td>
+                </tr>
+                <tr>
+                    <td>startFromElement <span class="new badge" data-badge-caption="">jQuery object</span></td>
+                    <td>false</td>
+                    <td>Selektor elementu strony, który ma się pojawić w viewport, aby animacja się rozpoczęła.</td>
+                </tr>
+                <tr>
+                    <td>scrollType <span class="new badge" data-badge-caption="">string</span></td>
+                    <td>'vertical'</td>
+                    <td>Typ scrollowania elementu lub strony: 'vertical' lub 'horizontal'</td>
+                </tr>
+                <tr>
+                    <td>startScroll <span class="new badge" data-badge-caption="">int</span></td>
+                    <td>0</td>
+                    <td>Wartość scrolla po osiągnięciu której ma się rozpocząć animacja</td>
+                </tr>
+                <tr>
+                    <td>endScroll <span class="new badge" data-badge-caption="">int</span></td>
+                    <td>0</td>
+                    <td>Wartość scrolla przy której animacja ma się zakończyć</td>
+                </tr>
+                <tr>
+                    <td>cssProperty <span class="new badge" data-badge-caption="">string</span></td>
+                    <td>''</td>
+                    <td>Właściwość CSS, która ma być manipulowana podczas animacji</td>
+                </tr>
+                <tr>
+                    <td>before <span class="new badge" data-badge-caption="">int</span></td>
+                    <td>0</td>
+                    <td>Początkowa wartość właściwości CSS</td>
+                </tr>
+                <tr>
+                    <td>after <span class="new badge" data-badge-caption="">int</span></td>
+                    <td>0</td>
+                    <td>Końcowa wartość właściwości CSS</td>
+                </tr>
+                <tr>
+                    <td>unit <span class="new badge" data-badge-caption="">string</span></td>
+                    <td>''</td>
+                    <td>Jednostka wartości, którą animujemy</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h3>Examples</h3>
+            <div id="card-alert" class="card grey z-depth-0 lighten-3">
+                <div class="card-content light-gray-text ">
+                    <p>COMING SOON</p>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="section">-->
+            <!--<h3>Commercial usage</h3>-->
+        <!--</div>-->
+    </div>
+</div>
+
+<footer class="page-footer grey darken-4">
+    <div class="footer-copyright">
+        <div class="container center">
+            © 2016 Copyright Krzysztof Furtak
+            <!--<a class="grey-text text-lighten-4 right" href="#!">More Links</a>-->
+        </div>
+    </div>
+</footer>
+
+<script src="assets/js/libs.min.js"></script>
+<script src="assets/js/kkScrollAnimate.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#button-1, #button-2').kkScrollAnimate({
+            scrollContent: $(document),
+            startScroll: 5,
+            endScroll: 100,
+            cssProperty: 'margin-top',
+            before: 0,
+            after: 200,
+            unit: 'px'
+        });
+
+        // $('.hero-header-bg').kkScrollAnimate({
+        //     scrollContent: $(document),
+        //     startScroll: 5,
+        //     endScroll: 100,
+        //     cssProperty: 'transform',
+        //     before: 'scale(1.3)',
+        //     after: 'scale(1)',
+        //     unit: ''
+        // });
+
+        $('.hero-header-bg').kkScrollAnimate({
+            startScroll: 50,
+            endScroll: 500,
+            cssProperty: 'opacity',
+            before: 1,
+            after: 0
+        });
+        $('.hero-header-bg').kkScrollAnimate({
+            startScroll: 50,
+            endScroll: 500,
+            cssProperty: 'top',
+            before: 0,
+            after: 300,
+            unit: 'px'
+        });
+    });
+</script>
+</body>
+</html>
