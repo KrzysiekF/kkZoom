@@ -6,6 +6,7 @@
     z-index: 1000;
     text-align: center;
     opacity: 0;
+    cursor: zoom-in;
     -webkit-transition: opacity 200ms;
     -moz-transition: opacity 200ms;
     -ms-transition: opacity 200ms;
