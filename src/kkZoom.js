@@ -160,9 +160,10 @@
                 opacity: 0
             });
 
+            _this.settings.afterZoomClosed();
+
             setTimeout(function () {
                 zoomImage.remove();
-                _this.settings.afterZoomClosed();
             }, 300);
         },
 

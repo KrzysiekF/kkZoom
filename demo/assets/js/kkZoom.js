@@ -79,8 +79,8 @@
                 top: _this.elementPosition.top,
                 left: _this.elementPosition.left,
                 opacity: 0
-            }), setTimeout(function() {
-                zoomImage.remove(), _this.settings.afterZoomClosed();
+            }), _this.settings.afterZoomClosed(), setTimeout(function() {
+                zoomImage.remove();
             }, 300);
         },
         createZoomButton: function() {
