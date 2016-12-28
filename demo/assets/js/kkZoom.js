@@ -66,7 +66,7 @@
             _this.$element.before(zoomImage), setTimeout(function() {
                 zoomImage.addClass("kk-zoom-image-big").css({
                     opacity: 1
-                }), _this.settings.afterZoomOpened.call(_this.$element);
+                }), _this.settings.afterZoomOpened();
             }, 10), zoomImage.on("click", function() {
                 _this.closeZoom(zoomImage);
             });
@@ -80,7 +80,7 @@
                 left: _this.elementPosition.left,
                 opacity: 0
             }), setTimeout(function() {
-                zoomImage.remove(), _this.settings.afterZoomClosed.call(_this.$element);
+                zoomImage.remove(), _this.settings.afterZoomClosed();
             }, 300);
         },
         createZoomButton: function() {

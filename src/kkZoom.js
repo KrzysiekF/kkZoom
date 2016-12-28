@@ -11,8 +11,10 @@
             zoomHeight      : 641,
             debug           : false,
 
-            afterZoomOpened: function () {},
-            afterZoomClosed: function () {}
+            afterZoomOpened: function () {
+            },
+            afterZoomClosed: function () {
+            }
         };
 
     function Plugin(element, options) {
@@ -66,27 +68,27 @@
         },
 
         calculatePositionParent: function (zoomImage) {
-            var _this  = this;
-            var parent = this.$element.parents(this.settings.parentSize);
-            var toTop  = Math.floor(this.$element.offset().top - parent.offset().top);
-            var toLeft = Math.floor(this.$element.offset().left - parent.offset().left);
+            var _this      = this;
+            var parent     = this.$element.parents(this.settings.parentSize);
+            var toTop      = Math.floor(this.$element.offset().top - parent.offset().top);
+            var toLeft     = Math.floor(this.$element.offset().left - parent.offset().left);
             var proportion = this.elementSize.height / this.elementSize.width;
 
-            var zoomImageHeight = Math.floor(parent.outerWidth() * proportion);
-            var bodyBottomSpace = $('body').height() - parent.offset().top - this.$element.height();
+            var zoomImageHeight  = Math.floor(parent.outerWidth() * proportion);
+            var bodyBottomSpace  = $('body').height() - parent.offset().top - this.$element.height();
             var canBottomDisplay = zoomImageHeight < bodyBottomSpace;
 
             this.log('--> height: ', zoomImageHeight);
-            this.log('--> bottom: ', bodyBottomSpace );
+            this.log('--> bottom: ', bodyBottomSpace);
             this.log('--> space to bottom: ', canBottomDisplay);
 
             zoomImage.css({
-                top  : (canBottomDisplay)? -1 * toTop : 'auto',
-                bottom: (canBottomDisplay)? 'auto' : 0,
-                left : -1 * toLeft,
-                width: parent.outerWidth(),
-                'max-width' : parent.outerWidth(),
-                height: zoomImageHeight
+                top        : (canBottomDisplay) ? -1 * toTop : 'auto',
+                bottom     : (canBottomDisplay) ? 'auto' : 0,
+                left       : -1 * toLeft,
+                width      : parent.outerWidth(),
+                'max-width': parent.outerWidth(),
+                height     : zoomImageHeight
             });
 
             _this.openZoom(zoomImage);
@@ -139,7 +141,7 @@
                 zoomImage.addClass('kk-zoom-image-big').css({
                     opacity: 1
                 });
-                _this.settings.afterZoomOpened.call( _this.$element );
+                _this.settings.afterZoomOpened();
             }, 10);
 
             zoomImage.on('click', function () {
@@ -153,14 +155,14 @@
             zoomImage.css({
                 width  : _this.elementSize.width,
                 height : _this.elementSize.height,
-                top: _this.elementPosition.top,
-                left: _this.elementPosition.left,
+                top    : _this.elementPosition.top,
+                left   : _this.elementPosition.left,
                 opacity: 0
             });
 
             setTimeout(function () {
                 zoomImage.remove();
-                _this.settings.afterZoomClosed.call( _this.$element );
+                _this.settings.afterZoomClosed();
             }, 300);
         },
 
