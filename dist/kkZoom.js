@@ -65,6 +65,8 @@
             var _this = this;
             _this.$element.before(zoomImage), setTimeout(function() {
                 zoomImage.addClass("kk-zoom-image-big").css({
+                    top: zoomImage.position().top,
+                    bottom: "auto",
                     opacity: 1
                 }), _this.settings.afterZoomOpened();
             }, 10), zoomImage.on("click", function() {
@@ -73,7 +75,8 @@
         },
         closeZoom: function(zoomImage) {
             var _this = this;
-            zoomImage.css({
+            this.log("===> closeZoom"), this.log("--> image top: ", zoomImage.position().top), 
+            this.log("--> top: ", _this.elementPosition.top), zoomImage.css({
                 width: _this.elementSize.width,
                 height: _this.elementSize.height,
                 top: _this.elementPosition.top,

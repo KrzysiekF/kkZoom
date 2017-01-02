@@ -139,6 +139,8 @@
 
             setTimeout(function () {
                 zoomImage.addClass('kk-zoom-image-big').css({
+                    top: zoomImage.position().top,
+                    bottom: 'auto',
                     opacity: 1
                 });
                 _this.settings.afterZoomOpened();
@@ -151,6 +153,10 @@
 
         closeZoom: function (zoomImage) {
             var _this = this;
+
+            this.log('===> closeZoom');
+            this.log( '--> image top: ', zoomImage.position().top );
+            this.log( '--> top: ', _this.elementPosition.top );
 
             zoomImage.css({
                 width  : _this.elementSize.width,
